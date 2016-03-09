@@ -1,11 +1,11 @@
 module ApplicationHelper
 
   def application_name
-    "BASE"
+    "mindcast.io"
   end
 
   def application_description
-    "BASE app"
+    "mindcast.io"
   end
 
 end
