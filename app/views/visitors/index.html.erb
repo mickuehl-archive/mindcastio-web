@@ -1,20 +1,8 @@
-<hero>
-	<h2>Hi. This is MINDCAST.IO.</h2>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-</hero>
 
-<main>
-	<major>
-		<h2>Consectetur adipisicing elit</h2>
-		<p>Lorem ipsum dolor sit amet, delectus consequatur, similique quia!</p>
-	</major>
-</main>
+<main class="space"></main>
 
-
-
-<main class="blue">
-	<major>
-		<h2>Consectetur adipisicing elit</h2>
-		<p>Lorem ipsum dolor sit amet, delectus consequatur, similique quia!</p>
-	</major>
-</main>
+<search>
+	<%= simple_form_for :search, :url => '/search' do |f| %>
+		<%= f.input :query, label: false, placeholder: 'Search for podcasts' %>
+	<% end %>
+</search>
