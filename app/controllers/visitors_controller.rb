@@ -19,7 +19,6 @@ class VisitorsController < ApplicationController
     @page = params[:page].to_i
     @from = 1 + ((@page - 1) * @limit)
 
-    # query the full text index
     if params[:search]
       q = URI.encode(params[:search][:query])
       @page = 1
@@ -27,6 +26,7 @@ class VisitorsController < ApplicationController
       q = URI.encode(params[:q])
     end
 
+    # query the full text index
     result = con.get("/api/1/search?q=#{q}&size=#{@limit}&page=#{@page}", {}, :body => nil)
 
     # parse the result
