@@ -2,7 +2,14 @@
 <main class="space"></main>
 
 <search>
-	<%= simple_form_for :search, :url => '/search' do |f| %>
+	<%= simple_form_for :search, :url => "/search/#{@page}" do |f| %>
 		<%= f.input :query, label: false, placeholder: 'Search for podcasts' %>
 	<% end %>
 </search>
+
+<main>
+	<major>
+		<h2>Consectetur adipisicing elit</h2>
+		<p>Lorem ipsum dolor sit amet, delectus consequatur, similique quia!</p>
+	</major>
+</main>

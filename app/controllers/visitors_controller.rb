@@ -5,6 +5,8 @@ require 'mindcast/connection'
 class VisitorsController < ApplicationController
 
   def index
+    @page = 1
+    @limit = 10
     render layout: "visitors"
   end
 
@@ -12,8 +14,20 @@ class VisitorsController < ApplicationController
   def search
     con = Mindcast::Connection.new(Rails.application.secrets.api_url, {})
 
+    # parse parameters
+    @limit = 10
+    @page = params[:page].to_i
+    @from = 1 + ((@page - 1) * @limit)
+
     # query the full text index
-    result = con.get("/api/1/search?q=#{URI.encode(params[:search][:query])}&size=10", {}, :body => nil)
+    if params[:search]
+      q = URI.encode(params[:search][:query])
+      @page = 1
+    else
+      q = URI.encode(params[:q])
+    end
+
+    result = con.get("/api/1/search?q=#{q}&size=#{@limit}&page=#{@page}", {}, :body => nil)
 
     # parse the result
     @podcasts = {}

@@ -20,4 +20,9 @@ module ApplicationHelper
     "#{t / 1000.0}"
   end
 
+  def has_next_page(count, page, limit)
+    return true if count > page * limit
+    return false
+  end
+
 end

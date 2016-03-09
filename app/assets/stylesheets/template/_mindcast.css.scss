@@ -207,6 +207,21 @@ main.light-gray {
 	background-color: #f5f5f5;
 }
 
+major {
+	text-align: center;
+	margin-bottom: 4em;
+
+}
+
+major h2 {
+	font-size: 3em;
+	margin-bottom: 0.5em;
+}
+
+major p {
+	font-size: 1.5em;
+}
+
 search {
 	@include span-columns(12);
 
@@ -218,7 +233,7 @@ search {
 	background-color: #f5f5f5;
 
 	form {
-		margin: 0 50px 0 50px ;
+		margin: 0 50px 0 60px ;
 	}
 }
 
@@ -227,11 +242,13 @@ search {
 podcasts {
 	@include span-columns(11);
 
+	margin-bottom: 3em;
+
 	summary {
 		text-align: left;
 		margin-top: 10px;
 
-		margin-left: 60px;
+		margin-left: 65px;
 	}
 
 	search_details {
@@ -240,7 +257,16 @@ podcasts {
 
 		margin-top: 10px;
 		margin-bottom: 10px;
-		margin-left: 60px;
+		margin-left: 65px;
+	}
+
+	paginator {
+		text-align: left;
+		font-size: 0.8em;
+
+		margin-top: 10px;
+		margin-bottom: 10px;
+		margin-left: 65px;
 	}
 
 	h3 {

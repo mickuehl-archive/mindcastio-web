@@ -1,15 +1,27 @@
 
 <main class="space"></main>
 
+<%= simple_form_for :search, :url => "/search/#{@page}" do |f| %>
+
 <search>
-	<%= simple_form_for :search, :url => '/search' do |f| %>
+
 		<%= f.input :query, label: false, input_html: { value: @podcasts['search_term']} %>
-	<% end %>
+
 </search>
 
 <podcasts>
 	<search_details>
-		About <%= @podcasts['count']%> results (<%= format_millis(@podcasts['duration']) %> seconds)
+		About <%= @podcasts['count'] %> results (<%= format_millis(@podcasts['duration']) %> seconds)
 	</search_details>
+
 	<%= render :partial => "summary", :collection => @podcasts['podcasts'] %>
+
+	<paginator>
+		<% if has_next_page(@podcasts['count'], @page, @limit) %>
+			<%= link_to "NEXT", "/search/#{@page+1}?q=#{@podcasts['search_term']}", method: :post %>
+		<% end %>
+	</paginator>
+
 </podcasts>
+
+<% end %>

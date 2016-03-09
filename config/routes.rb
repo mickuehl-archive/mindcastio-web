@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
   root to: 'visitors#index'
-  post '/search', :to => 'visitors#search'
+
+  post '/search/:page', :to => 'visitors#search'
+  get '/search/:page', :to => 'visitors#search'
+
 end
