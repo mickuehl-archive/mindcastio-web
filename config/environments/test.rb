@@ -58,4 +58,6 @@ Rails.application.configure do
   # Send emails in test mode?
   config.action_mailer.perform_deliveries = false
 
+  config.google_analytics_id = ENV['GOOGLE_ANALYTICS_ID']
+
 end

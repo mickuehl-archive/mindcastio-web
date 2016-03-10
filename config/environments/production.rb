@@ -75,7 +75,7 @@ Rails.application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # app specific configuration
-  
+
   config.action_mailer.smtp_settings = {
     address: Rails.application.secrets.smtp_provider_host,
     port: 587,
@@ -91,5 +91,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   # Send email in development mode?
   config.action_mailer.perform_deliveries = true
+
+  config.google_analytics_id = ENV['GOOGLE_ANALYTICS_ID']
 
 end

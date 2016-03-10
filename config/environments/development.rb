@@ -54,4 +54,6 @@ Rails.application.configure do
   # Send emails in development mode?
   config.action_mailer.perform_deliveries = true
 
+  config.google_analytics_id = ENV['GOOGLE_ANALYTICS_ID']
+
 end
