@@ -7,8 +7,6 @@ class VisitorsController < ApplicationController
   def index
     @page = 1
     @limit = 10
-    @user_name = "FOO"
-    render layout: "visitors"
   end
 
   # POST '/search'
@@ -50,9 +48,11 @@ class VisitorsController < ApplicationController
       @podcasts['podcasts'] = podcasts
     else
       @podcasts['podcasts'] = []
+      render 'nocasts'
     end
 
   end
+
 
 private
 

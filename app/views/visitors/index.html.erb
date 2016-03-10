@@ -1,11 +1,7 @@
 
 <main class="space"></main>
 
-<search>
-	<%= simple_form_for :search, :url => "/search/#{@page}" do |f| %>
-		<%= f.input :query, label: false, placeholder: 'Search for podcasts' %>
-	<% end %>
-</search>
+<%= render 'visitors/search' %>
 
 <main>
 	<major>
