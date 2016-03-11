@@ -1,9 +1,6 @@
 <summary>
 	<h3><%= summary['title'] %></h3>
 	<p><%= summary['description']%></p>
-	<!--
-	<p><a href="<%= summary['feed_url'] %>" target="_main"><%= summary['feed_url'] %></a> - Published: <%= Time.at( summary['published']) %></p>
-		-->
 	<p>
 		Published: <%= format_time( summary['published'])%> -
 		Feed: <a href="<%= summary['feed'] %>" target="_main"><%= summary['feed'] %></a>
