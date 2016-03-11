@@ -80,7 +80,7 @@ header {
 	color: #fff;
 
 	font-size: 1.1em;
-	height: 70px;
+	height: 60px;
 	line-height: 4em;
 	width: 100%;
 
@@ -188,13 +188,13 @@ header {
 
 main {
 	@include span-columns(12);
-
-	padding-top: 20px;
+	//background-image: url(dark_tint.png), url(base.jpeg);
+	padding-top: 60px;
 	padding-bottom: 10px;
 }
 
 main.space {
-	padding-top: 70px;
+	padding-top: 60px;
 }
 
 main.blue {
