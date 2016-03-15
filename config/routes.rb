@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'visitors#index'
+  root to: 'search#index'
 
-  post '/search/:page', :to => 'visitors#search'
-  
+  post '/search/:page', :to => 'search#search'
+
 end

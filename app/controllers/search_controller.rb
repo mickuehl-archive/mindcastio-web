@@ -2,7 +2,7 @@
 require 'uri'
 require 'mindcast/connection'
 
-class VisitorsController < ApplicationController
+class SearchController < ApplicationController
 
   def index
     @page = 1
