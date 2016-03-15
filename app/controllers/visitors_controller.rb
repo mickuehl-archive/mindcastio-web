@@ -38,6 +38,8 @@ class VisitorsController < ApplicationController
       attributes = {}
       result['included'].each do |podcast|
         attributes[podcast['id']] = podcast['attributes']
+        # add the uid ...
+        attributes[podcast['id']]['uid'] = podcast['id']
       end
 
       podcasts = []

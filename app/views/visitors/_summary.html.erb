@@ -1,8 +1,16 @@
 <summary>
-	<h3><%= summary['title'] %></h3>
-	<p><%= summary['description']%></p>
+	<h3><%= link_to summary['subtitle'], "/p/#{summary['uid']}", method: :get %></h3>
+	<h5><%= summary['subtitle'] %></h5>
+
+	<% if summary['subtitle'].length != summary['description'].length %>
+		<p><%= truncate(summary['description'], :length => 300,  :separator => ' ') %></p>
+	<% end %>
+
 	<p>
-		Published: <%= format_time( summary['published'])%> -
+		Last updated: <%= format_time( summary['published'])%> -
+		<% if summary['url'] != "" %>
+			Podcast: <a href="<%= summary['url'] %>" target="_main"><%= summary['url'] %></a> -
+		<% end %>
 		Feed: <a href="<%= summary['feed'] %>" target="_main"><%= summary['feed'] %></a>
 	</p>
 </summary>

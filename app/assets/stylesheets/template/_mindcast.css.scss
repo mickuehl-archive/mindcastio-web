@@ -255,9 +255,15 @@ podcasts {
 
 	summary {
 		text-align: left;
-		margin-top: 10px;
 
+		margin-top: 10px;
+		margin-bottom: 20px;
 		margin-left: 65px;
+
+		h5 {
+			font-size: 0.9em;
+			margin-top: -0.2em;
+		}
 	}
 
 	search_details {
