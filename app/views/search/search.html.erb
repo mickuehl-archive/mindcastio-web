@@ -7,24 +7,26 @@
 			<%= f.input :query, label: false, input_html: { value: @podcasts['search_term']} %>
 	</search>
 
-	<podcasts>
-
-		<search_details>
+	<search_summary>
+		<p>
 			<% if @podcasts['count'] < 100 %>
 				<%= @podcasts['count'] %> results (<%= format_millis(@podcasts['duration']) %> seconds)
 			<% else %>
 				About <%= @podcasts['count'] %> results (<%= format_millis(@podcasts['duration']) %> seconds)
 			<% end %>
-		</search_details>
+		</p>
+	</search_summary>
 
+	<podcasts>
 		<%= render :partial => "summary", :collection => @podcasts['podcasts'] %>
-
-		<paginator>
-			<% if has_next_page(@podcasts['count'], @page, @limit) %>
-				<%= link_to "SHOW MORE PODCASTS >>>", "/search/#{@page+1}?q=#{URI.encode(@podcasts['search_term'])}", method: :post %>
-			<% end %>
-		</paginator>
-
 	</podcasts>
+
+	<main class="space"></main>
+	
+	<paginator>
+		<% if has_next_page(@podcasts['count'], @page, @limit) %>
+			<%= link_to "SHOW MORE PODCASTS >>>", "/search/#{@page+1}?q=#{URI.encode(@podcasts['search_term'])}", method: :post %>
+		<% end %>
+	</paginator>
 
 <% end %>

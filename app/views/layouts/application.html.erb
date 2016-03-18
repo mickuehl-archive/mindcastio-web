@@ -11,9 +11,7 @@
   </head>
 
   <body>
-    <header>
-		    <h1><%= link_to 'mindcast.io', root_path %></h1>
-  	</header>
+    <%= render 'layouts/header' %>
 	  <%= yield %>
 	  <%= render 'layouts/footer' %>
   </body>
