@@ -185,7 +185,7 @@ search_summary {
 }
 
 podcasts {
-	@include span-columns(12);
+	@include span-columns(11);
 	width: 100%;
 
 	background-color: white;
@@ -245,7 +245,7 @@ paginator {
 }
 
 static {
-	@include span-columns(12);
+	@include span-columns(11);
 
 	margin-left: 65px;
 }
