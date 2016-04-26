@@ -6,5 +6,10 @@
 		<h2><%= @podcast['title'] %></h2>
 		<h3><%= @podcast['subtitle'] %></h3>
 		<p><%= @podcast['description'] %></p>
+
+		<episodes>
+			<%= render :partial => "summary", :collection => @podcast['episodes'] %>
+		</episodes>
+
 	</podcast>
 </main>

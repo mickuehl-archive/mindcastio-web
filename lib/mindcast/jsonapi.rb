@@ -1,5 +1,16 @@
 
 
+def extract_data(result, relationship=nil)
+
+	data = result['data']['attributes']
+
+	if relationship
+		data[relationship] = extract_relationship_data result, relationship
+	end
+
+	return data
+end
+
 def extract_relationship_data(result, relationship)
 
 	attributes = {}
