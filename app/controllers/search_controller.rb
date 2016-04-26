@@ -1,6 +1,7 @@
 
 require 'uri'
 require 'mindcast/connection'
+require 'mindcast/jsonapi'
 
 class SearchController < ApplicationController
 
@@ -35,19 +36,7 @@ class SearchController < ApplicationController
     @podcasts['duration'] = result['data']['attributes']['duration']
 
     if @podcasts['count'] > 0
-      attributes = {}
-      result['included'].each do |podcast|
-        attributes[podcast['id']] = podcast['attributes']
-        # add the uid ...
-        attributes[podcast['id']]['uid'] = podcast['id']
-      end
-
-      podcasts = []
-      result['data']['relationships']['results']['data'].each do |data|
-        podcasts << attributes[data['id']]
-      end
-
-      @podcasts['podcasts'] = podcasts
+      @podcasts['podcasts'] = extract_relationship_data(result, 'results')
     else
       @podcasts['podcasts'] = []
       render 'nocasts'
